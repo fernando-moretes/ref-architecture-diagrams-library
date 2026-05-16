@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://diagrams.moretes.com/sitemap.xml
