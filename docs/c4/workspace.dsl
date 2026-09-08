@@ -7,12 +7,16 @@
  */
 workspace "ref-architecture-diagrams-library" "Diagrams as code for AWS, C4, BPMN, event-driven, sequence and state — reproducible and reviewable." {
 
+    configuration {
+        scope softwaresystem
+    }
+
     model {
         usuario = person "Usuário"
         sistema = softwareSystem "ref-architecture-diagrams-library" "Diagrams as code for AWS, C4, BPMN, event-driven, sequence and state — reproducible and reviewable." {
             app = container "Aplicação" "Descreva o que roda aqui" "ci-node.yml"
         }
-        usuario -> sistema.app "Usa"
+        usuario -> sistema.app "Usa" "HTTPS"
     }
 
     views {
@@ -25,9 +29,19 @@ workspace "ref-architecture-diagrams-library" "Diagrams as code for AWS, C4, BPM
             autoLayout lr
         }
         styles {
-            element "Person" { shape person; background #08427b; color #ffffff }
-            element "Software System" { background #1168bd; color #ffffff }
-            element "Container" { background #438dd5; color #ffffff }
+            element "Person" {
+                shape person
+                background #08427b
+                color #ffffff
+            }
+            element "Software System" {
+                background #1168bd
+                color #ffffff
+            }
+            element "Container" {
+                background #438dd5
+                color #ffffff
+            }
         }
     }
 }
